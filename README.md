@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Welcome to your Lovable project
 
 ## Project info
@@ -71,3 +72,12 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+=======
+# atendechat-frontend
+Interface web do sistema AtendeChat. Desenvolvido em React + Vite, com integração à API https://api.diasolutions.ia.br.
+>>>>>>> frontend/main
+---
+
+## 🔗 Nota de Integração
+Este projeto foi unificado com o repositório original `atendechat-frontend`  
+para preservar o layout e a estrutura visual original da aplicação.

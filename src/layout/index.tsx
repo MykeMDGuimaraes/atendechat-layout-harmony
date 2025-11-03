@@ -265,25 +265,24 @@ const LoggedInLayout: React.FC = () => {
           <Typography component="h2" variant="h6" color="inherit" noWrap className={classes.title}>
             {greaterThenSm && user?.profile === "admin" && user?.company?.dueDate ? (
               <>
-                {i18n.t("mainDrawer.appBar.greeting.hello")} <b>{user.name}</b>,{" "}
-                {i18n.t("mainDrawer.appBar.greeting.welcome")} <b>{user?.company?.name}</b>! (
-                {i18n.t("mainDrawer.appBar.greeting.active")} {dateToClient(user?.company?.dueDate)})
+                {String(i18n.t("mainDrawer.appBar.greeting.hello"))} <b>{user.name}</b>,{" "}
+                {String(i18n.t("mainDrawer.appBar.greeting.welcome"))} <b>{user?.company?.name}</b>! (
+                {String(i18n.t("mainDrawer.appBar.greeting.active"))} {dateToClient(user?.company?.dueDate)})
               </>
             ) : (
               <>
-                {i18n.t("mainDrawer.appBar.greeting.hello")} <b>{user?.name}</b>,{" "}
-                {i18n.t("mainDrawer.appBar.greeting.welcome")} <b>{user?.company?.name}</b>!
+                {String(i18n.t("mainDrawer.appBar.greeting.hello"))} <b>{user?.name}</b>,{" "}
+                {String(i18n.t("mainDrawer.appBar.greeting.welcome"))} <b>{user?.company?.name}</b>!
               </>
             )}
           </Typography>
 
           <div>
-            <IconButton edge="start">
+            <IconButton edge="start" onClick={handlemenuLanguage}>
               <LanguageOutlined
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
-                onClick={handlemenuLanguage}
                 style={{ color: "white", marginRight: 10 }}
               />
             </IconButton>
@@ -320,7 +319,7 @@ const LoggedInLayout: React.FC = () => {
 
           <IconButton
             onClick={handleRefreshPage}
-            aria-label={i18n.t("mainDrawer.appBar.refresh")}
+            aria-label={String(i18n.t("mainDrawer.appBar.refresh"))}
             color="inherit"
           >
             <CachedIcon style={{ color: "white" }} />
@@ -358,10 +357,10 @@ const LoggedInLayout: React.FC = () => {
               onClose={handleCloseMenu}
             >
               <MenuItem onClick={handleOpenUserModal}>
-                {i18n.t("mainDrawer.appBar.user.profile")}
+                {String(i18n.t("mainDrawer.appBar.user.profile"))}
               </MenuItem>
               <MenuItem onClick={handleClickLogout}>
-                {i18n.t("mainDrawer.appBar.user.logout")}
+                {String(i18n.t("mainDrawer.appBar.user.logout"))}
               </MenuItem>
             </Menu>
           </div>

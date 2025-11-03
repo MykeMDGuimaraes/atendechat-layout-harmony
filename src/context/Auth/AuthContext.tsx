@@ -8,6 +8,9 @@ interface User {
   name: string;
   email: string;
   profile: string;
+  companyId?: number;
+  company?: { name?: string; dueDate?: string } | null;
+  super?: boolean;
 }
 
 interface AuthContextData {

@@ -27,7 +27,7 @@ import AnnouncementIcon from "@material-ui/icons/Announcement";
 import ForumIcon from "@material-ui/icons/Forum";
 import LocalAtmIcon from "@material-ui/icons/LocalAtm";
 import { i18n } from "../translate/i18n";
-import { WhatsAppsContext } from "../context/WhatsApp/WhatsAppsContext";
+import { useWhatsApps } from "../context/WhatsApp/WhatsAppsContext";
 import { useAuth } from "../context/Auth/AuthContext";
 import { Can } from "../components/Can";
 import { SocketContext } from "../context/Socket/SocketContext";
@@ -83,7 +83,7 @@ interface MainListItemsProps {
 const MainListItems: React.FC<MainListItemsProps> = ({ drawerClose, collapsed }) => {
   const classes = useStyles();
   const navigate = useNavigate();
-  const { whatsApps } = useContext(WhatsAppsContext);
+  const { whatsApps } = useWhatsApps();
   const { user } = useAuth();
   const [connectionWarning, setConnectionWarning] = useState(false);
   const [openCampaignSubmenu, setOpenCampaignSubmenu] = useState(false);
@@ -154,7 +154,7 @@ const MainListItems: React.FC<MainListItemsProps> = ({ drawerClose, collapsed })
 
       <ListItemLink
         to="/tickets"
-        primary={i18n.t("mainDrawer.listItems.tickets")}
+        primary={String(i18n.t("mainDrawer.listItems.tickets"))}
         icon={<WhatsAppIcon />}
       />
 
@@ -168,37 +168,37 @@ const MainListItems: React.FC<MainListItemsProps> = ({ drawerClose, collapsed })
 
       <ListItemLink
         to="/quick-messages"
-        primary={i18n.t("mainDrawer.listItems.quickMessages")}
+        primary={String(i18n.t("mainDrawer.listItems.quickMessages"))}
         icon={<FlashOnIcon />}
       />
 
       <ListItemLink
         to="/todolist"
-        primary={i18n.t("mainDrawer.listItems.tasks")}
+        primary={String(i18n.t("mainDrawer.listItems.tasks"))}
         icon={<BorderColorIcon />}
       />
 
       <ListItemLink
         to="/contacts"
-        primary={i18n.t("mainDrawer.listItems.contacts")}
+        primary={String(i18n.t("mainDrawer.listItems.contacts"))}
         icon={<ContactPhoneOutlinedIcon />}
       />
 
       <ListItemLink
         to="/schedules"
-        primary={i18n.t("mainDrawer.listItems.schedules")}
+        primary={String(i18n.t("mainDrawer.listItems.schedules"))}
         icon={<EventIcon />}
       />
 
       <ListItemLink
         to="/tags"
-        primary={i18n.t("mainDrawer.listItems.tags")}
+        primary={String(i18n.t("mainDrawer.listItems.tags"))}
         icon={<LocalOfferIcon />}
       />
 
       <ListItemLink
         to="/chats"
-        primary={i18n.t("mainDrawer.listItems.chats")}
+        primary={String(i18n.t("mainDrawer.listItems.chats"))}
         icon={
           <Badge color="secondary" variant="dot" invisible={invisible}>
             <ForumIcon />
@@ -208,7 +208,7 @@ const MainListItems: React.FC<MainListItemsProps> = ({ drawerClose, collapsed })
 
       <ListItemLink
         to="/helps"
-        primary={i18n.t("mainDrawer.listItems.helps")}
+        primary={String(i18n.t("mainDrawer.listItems.helps"))}
         icon={<HelpOutlineIcon />}
       />
 
@@ -229,7 +229,7 @@ const MainListItems: React.FC<MainListItemsProps> = ({ drawerClose, collapsed })
               inset
               color="inherit"
             >
-              {i18n.t("mainDrawer.listItems.administration")}
+                {String(i18n.t("mainDrawer.listItems.administration"))}
             </ListSubheader>
 
             {showCampaigns && (
@@ -241,7 +241,7 @@ const MainListItems: React.FC<MainListItemsProps> = ({ drawerClose, collapsed })
                   <ListItemIcon>
                     <EventAvailableIcon />
                   </ListItemIcon>
-                  <ListItemText primary={i18n.t("mainDrawer.listItems.campaigns")} />
+                  <ListItemText primary={String(i18n.t("mainDrawer.listItems.campaigns"))} />
                   {openCampaignSubmenu ? <ExpandLessIcon /> : <ExpandMoreIcon />}
                 </ListItem>
                 <Collapse
@@ -276,7 +276,7 @@ const MainListItems: React.FC<MainListItemsProps> = ({ drawerClose, collapsed })
                   <ListItemIcon>
                     <AccountTree />
                   </ListItemIcon>
-                  <ListItemText primary={i18n.t("mainDrawer.listItems.flows")} />
+                  <ListItemText primary={String(i18n.t("mainDrawer.listItems.flows"))} />
                   {openFlowsSubmenu ? <ExpandLessIcon /> : <ExpandMoreIcon />}
                 </ListItem>
 
@@ -305,10 +305,10 @@ const MainListItems: React.FC<MainListItemsProps> = ({ drawerClose, collapsed })
               </>
             )}
 
-            {user.super && (
+            {user?.super && (
               <ListItemLink
                 to="/announcements"
-                primary={i18n.t("mainDrawer.listItems.annoucements")}
+                primary={String(i18n.t("mainDrawer.listItems.annoucements"))}
                 icon={<AnnouncementIcon />}
               />
             )}
@@ -316,7 +316,7 @@ const MainListItems: React.FC<MainListItemsProps> = ({ drawerClose, collapsed })
             {showOpenAi && (
               <ListItemLink
                 to="/prompts"
-                primary={i18n.t("mainDrawer.listItems.prompts")}
+                primary={String(i18n.t("mainDrawer.listItems.prompts"))}
                 icon={<AllInclusive />}
               />
             )}
@@ -324,14 +324,14 @@ const MainListItems: React.FC<MainListItemsProps> = ({ drawerClose, collapsed })
             {showIntegrations && (
               <ListItemLink
                 to="/queue-integration"
-                primary={i18n.t("mainDrawer.listItems.queueIntegration")}
+                primary={String(i18n.t("mainDrawer.listItems.queueIntegration"))}
                 icon={<DeviceHubOutlined />}
               />
             )}
 
             <ListItemLink
               to="/connections"
-              primary={i18n.t("mainDrawer.listItems.connections")}
+              primary={String(i18n.t("mainDrawer.listItems.connections"))}
               icon={
                 <Badge badgeContent={connectionWarning ? "!" : 0} color="error">
                   <SyncAltIcon />
@@ -341,33 +341,33 @@ const MainListItems: React.FC<MainListItemsProps> = ({ drawerClose, collapsed })
 
             <ListItemLink
               to="/files"
-              primary={i18n.t("mainDrawer.listItems.files")}
+              primary={String(i18n.t("mainDrawer.listItems.files"))}
               icon={<AttachFile />}
             />
 
             <ListItemLink
               to="/queues"
-              primary={i18n.t("mainDrawer.listItems.queues")}
+              primary={String(i18n.t("mainDrawer.listItems.queues"))}
               icon={<AccountTreeOutlinedIcon />}
             />
 
             <ListItemLink
               to="/users"
-              primary={i18n.t("mainDrawer.listItems.users")}
+              primary={String(i18n.t("mainDrawer.listItems.users"))}
               icon={<PeopleAltOutlinedIcon />}
             />
 
             {showExternalApi && (
               <ListItemLink
                 to="/messages-api"
-                primary={i18n.t("mainDrawer.listItems.messagesAPI")}
+                primary={String(i18n.t("mainDrawer.listItems.messagesAPI"))}
                 icon={<CodeRoundedIcon />}
               />
             )}
 
             <ListItemLink
               to="/financeiro"
-              primary={i18n.t("mainDrawer.listItems.financeiro")}
+              primary={String(i18n.t("mainDrawer.listItems.financeiro"))}
               icon={<LocalAtmIcon />}
             />
 

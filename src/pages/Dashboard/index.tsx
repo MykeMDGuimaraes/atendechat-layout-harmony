@@ -164,7 +164,7 @@ const Dashboard: React.FC = () => {
     }
 
     if (Object.keys(params).length === 0) {
-      toast.error(i18n.t("dashboard.toasts.selectFilterError"));
+      toast.error(String(i18n.t("dashboard.toasts.selectFilterError")));
       setLoading(false);
       return;
     }
@@ -200,7 +200,7 @@ const Dashboard: React.FC = () => {
         <>
           <Grid item xs={12} sm={6} md={4}>
             <TextField
-              label={i18n.t("dashboard.filters.initialDate")}
+              label={String(i18n.t("dashboard.filters.initialDate"))}
               type="date"
               value={dateFrom}
               onChange={(e) => setDateFrom(e.target.value)}
@@ -212,7 +212,7 @@ const Dashboard: React.FC = () => {
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
             <TextField
-              label={i18n.t("dashboard.filters.finalDate")}
+              label={String(i18n.t("dashboard.filters.finalDate"))}
               type="date"
               value={dateTo}
               onChange={(e) => setDateTo(e.target.value)}
@@ -229,7 +229,7 @@ const Dashboard: React.FC = () => {
         <Grid item xs={12} sm={6} md={4}>
           <FormControl className={classes.selectContainer}>
             <InputLabel id="period-selector-label">
-              {i18n.t("dashboard.periodSelect.title")}
+              {String(i18n.t("dashboard.periodSelect.title"))}
             </InputLabel>
             <Select
               labelId="period-selector-label"
@@ -237,15 +237,15 @@ const Dashboard: React.FC = () => {
               value={period}
               onChange={(e) => handleChangePeriod(Number(e.target.value))}
             >
-              <MenuItem value={0}>{i18n.t("dashboard.periodSelect.options.none")}</MenuItem>
-              <MenuItem value={3}>{i18n.t("dashboard.periodSelect.options.last3")}</MenuItem>
-              <MenuItem value={7}>{i18n.t("dashboard.periodSelect.options.last7")}</MenuItem>
-              <MenuItem value={15}>{i18n.t("dashboard.periodSelect.options.last15")}</MenuItem>
-              <MenuItem value={30}>{i18n.t("dashboard.periodSelect.options.last30")}</MenuItem>
-              <MenuItem value={60}>{i18n.t("dashboard.periodSelect.options.last60")}</MenuItem>
-              <MenuItem value={90}>{i18n.t("dashboard.periodSelect.options.last90")}</MenuItem>
+              <MenuItem value={0}>{String(i18n.t("dashboard.periodSelect.options.none"))}</MenuItem>
+              <MenuItem value={3}>{String(i18n.t("dashboard.periodSelect.options.last3"))}</MenuItem>
+              <MenuItem value={7}>{String(i18n.t("dashboard.periodSelect.options.last7"))}</MenuItem>
+              <MenuItem value={15}>{String(i18n.t("dashboard.periodSelect.options.last15"))}</MenuItem>
+              <MenuItem value={30}>{String(i18n.t("dashboard.periodSelect.options.last30"))}</MenuItem>
+              <MenuItem value={60}>{String(i18n.t("dashboard.periodSelect.options.last60"))}</MenuItem>
+              <MenuItem value={90}>{String(i18n.t("dashboard.periodSelect.options.last90"))}</MenuItem>
             </Select>
-            <FormHelperText>{i18n.t("dashboard.periodSelect.helper")}</FormHelperText>
+            <FormHelperText>{String(i18n.t("dashboard.periodSelect.helper"))}</FormHelperText>
           </FormControl>
         </Grid>
       );
@@ -262,7 +262,7 @@ const Dashboard: React.FC = () => {
               <Grid container spacing={3}>
                 <Grid item xs={8}>
                   <Typography component="h3" variant="h6" paragraph>
-                    {i18n.t("dashboard.counters.inTalk")}
+                    {String(i18n.t("dashboard.counters.inTalk"))}
                   </Typography>
                   <Grid item>
                     <Typography component="h1" variant="h4">
@@ -283,7 +283,7 @@ const Dashboard: React.FC = () => {
               <Grid container spacing={3}>
                 <Grid item xs={8}>
                   <Typography component="h3" variant="h6" paragraph>
-                    {i18n.t("dashboard.counters.waiting")}
+                    {String(i18n.t("dashboard.counters.waiting"))}
                   </Typography>
                   <Grid item>
                     <Typography component="h1" variant="h4">
@@ -386,7 +386,7 @@ const Dashboard: React.FC = () => {
           <Grid item xs={12} sm={6} md={4}>
             <FormControl className={classes.selectContainer}>
               <InputLabel id="period-selector-label">
-                {i18n.t("dashboard.filters.filterType.title")}
+                {String(i18n.t("dashboard.filters.filterType.title"))}
               </InputLabel>
               <Select
                 labelId="period-selector-label"
@@ -394,14 +394,14 @@ const Dashboard: React.FC = () => {
                 onChange={(e) => handleChangeFilterType(Number(e.target.value))}
               >
                 <MenuItem value={1}>
-                  {i18n.t("dashboard.filters.filterType.options.perDate")}
+                  {String(i18n.t("dashboard.filters.filterType.options.perDate"))}
                 </MenuItem>
                 <MenuItem value={2}>
-                  {i18n.t("dashboard.filters.filterType.options.perPeriod")}
+                  {String(i18n.t("dashboard.filters.filterType.options.perPeriod"))}
                 </MenuItem>
               </Select>
               <FormHelperText>
-                {i18n.t("dashboard.filters.filterType.helper")}
+                {String(i18n.t("dashboard.filters.filterType.helper"))}
               </FormHelperText>
             </FormControl>
           </Grid>

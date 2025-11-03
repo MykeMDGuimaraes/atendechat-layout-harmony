@@ -7,6 +7,8 @@ interface WhatsApp {
   status: string;
   qrcode?: string;
   number?: string;
+  updatedAt: string;
+  isDefault?: boolean;
 }
 
 interface WhatsAppsContextData {

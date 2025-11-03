@@ -20,6 +20,9 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
 import TicketsCustom from "./pages/TicketsCustom";
+import TicketsAdvanced from "./pages/TicketsAdvanced";
+import Connections from "./pages/Connections";
+import Contacts from "./pages/Contacts";
 
 const queryClient = new QueryClient();
 
@@ -106,6 +109,8 @@ const App = () => {
                         <Route index element={<Dashboard />} />
                         <Route path="/tickets" element={<TicketsCustom />} />
                         <Route path="/tickets/:ticketId" element={<TicketsCustom />} />
+                        <Route path="/connections" element={<Connections />} />
+                        <Route path="/contacts" element={<Contacts />} />
                       </Route>
 
                       {/* 404 */}

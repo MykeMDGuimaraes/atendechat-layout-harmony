@@ -49,7 +49,7 @@ const Signup: React.FC = () => {
       <Card className="w-full max-w-md mx-4">
         <CardHeader className="text-center">
           <CardTitle className="text-3xl font-bold text-primary">Criar Conta</CardTitle>
-          <CardDescription>Cadastre-se para começar a usar o DIA Agent&apos;s Home</CardDescription>
+          <CardDescription>Cadastre-se para começar a usar o DIA Agent&apos;s House</CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={formik.handleSubmit} className="space-y-4">

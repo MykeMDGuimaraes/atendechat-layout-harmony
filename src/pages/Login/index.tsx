@@ -27,14 +27,14 @@ const Login: React.FC = () => {
   return <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-600 to-purple-800">
       <Card className="w-full max-w-md mx-4">
         <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-bold text-primary">AtendeChat</CardTitle>
+          <CardTitle className="text-3xl font-bold text-primary">DIA Agent's House</CardTitle>
           <CardDescription>Faça login para acessar o sistema</CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={formik.handleSubmit} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
-              <Input id="email" type="email" placeholder="seu@email.com" className="text-5xl text-right" />
+              <Input id="email" type="email" placeholder="seu@email.com" {...formik.getFieldProps("email")} />
               {formik.touched.email && formik.errors.email && <p className="text-sm text-destructive">{formik.errors.email}</p>}
             </div>
 

@@ -37,7 +37,7 @@ const Login: React.FC = () => {
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-600 to-purple-800">
       <Card className="w-full max-w-md mx-4">
         <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-bold text-primary">AtendeChat</CardTitle>
+          <CardTitle className="text-3xl font-bold text-primary">DIA Agent&apos;s Home</CardTitle>
           <CardDescription>Faça login para acessar o sistema</CardDescription>
         </CardHeader>
         <CardContent>

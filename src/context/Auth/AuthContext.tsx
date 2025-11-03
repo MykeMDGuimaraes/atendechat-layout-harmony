@@ -3,6 +3,19 @@ import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
 import { toast } from "sonner";
 
+// Mock user for testing without backend
+const MOCK_USER = {
+  id: 1,
+  name: "Admin Teste",
+  email: "admin@teste.com",
+  profile: "admin",
+  companyId: 1,
+  company: { name: "Empresa Teste", dueDate: "2025-12-31" },
+  super: true,
+};
+
+const MOCK_TOKEN = "mock-jwt-token-for-testing";
+
 interface User {
   id: number;
   name: string;
@@ -19,9 +32,17 @@ interface AuthContextData {
   loading: boolean;
   handleLogin: (userData: LoginData) => Promise<void>;
   handleLogout: () => void;
+  handleSignup: (userData: SignupData) => Promise<void>;
+  handleMockLogin: () => void;
 }
 
 interface LoginData {
+  email: string;
+  password: string;
+}
+
+interface SignupData {
+  name: string;
   email: string;
   password: string;
 }
@@ -73,6 +94,29 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     navigate("/login");
   };
 
+  const handleSignup = async (userData: SignupData) => {
+    setLoading(true);
+    try {
+      await api.post("/auth/signup", userData);
+      toast.success("Cadastro realizado! Faça login para continuar.");
+      navigate("/login");
+    } catch (error: any) {
+      toast.error(error?.response?.data?.error || "Erro ao criar conta");
+      throw error;
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleMockLogin = () => {
+    localStorage.setItem("token", JSON.stringify(MOCK_TOKEN));
+    localStorage.setItem("user", JSON.stringify(MOCK_USER));
+    api.defaults.headers.Authorization = `Bearer ${MOCK_TOKEN}`;
+    setUser(MOCK_USER);
+    toast.success("Login de teste ativado!");
+    navigate("/");
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -81,6 +125,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         loading,
         handleLogin,
         handleLogout,
+        handleSignup,
+        handleMockLogin,
       }}
     >
       {children}

@@ -17,6 +17,7 @@ import { WhatsAppsProvider } from "./context/WhatsApp/WhatsAppsContext";
 import PrivateRoute from "./routes/Route";
 import LoggedInLayout from "./layout";
 import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
 import TicketsCustom from "./pages/TicketsCustom";
@@ -96,6 +97,14 @@ const App = () => {
                         element={
                           <PrivateRoute isPrivate={false}>
                             <Login />
+                          </PrivateRoute>
+                        }
+                      />
+                      <Route
+                        path="/signup"
+                        element={
+                          <PrivateRoute isPrivate={false}>
+                            <Signup />
                           </PrivateRoute>
                         }
                       />

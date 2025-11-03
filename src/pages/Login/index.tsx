@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useAuth } from "../../context/Auth/AuthContext";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().email("Email inválido").required("Email obrigatório"),
@@ -13,7 +15,8 @@ const validationSchema = Yup.object().shape({
 });
 
 const Login: React.FC = () => {
-  const { handleLogin } = useAuth();
+  const { handleLogin, handleMockLogin } = useAuth();
+  const [showMockLogin, setShowMockLogin] = useState(false);
 
   const formik = useFormik({
     initialValues: {
@@ -22,7 +25,11 @@ const Login: React.FC = () => {
     },
     validationSchema,
     onSubmit: async (values) => {
-      await handleLogin(values);
+      try {
+        await handleLogin(values);
+      } catch (error) {
+        setShowMockLogin(true);
+      }
     },
   });
 
@@ -68,6 +75,34 @@ const Login: React.FC = () => {
             >
               {formik.isSubmitting ? "Entrando..." : "Entrar"}
             </Button>
+
+            {showMockLogin && (
+              <Alert>
+                <AlertDescription className="text-center">
+                  Backend não disponível. Use o login de teste abaixo.
+                </AlertDescription>
+              </Alert>
+            )}
+
+            {showMockLogin && (
+              <Button
+                type="button"
+                variant="outline"
+                className="w-full"
+                onClick={handleMockLogin}
+              >
+                🧪 Usar Login de Teste
+              </Button>
+            )}
+
+            <div className="text-center mt-4">
+              <p className="text-sm text-muted-foreground">
+                Não tem uma conta?{" "}
+                <Link to="/signup" className="text-primary hover:underline font-medium">
+                  Cadastre-se aqui
+                </Link>
+              </p>
+            </div>
           </form>
         </CardContent>
       </Card>

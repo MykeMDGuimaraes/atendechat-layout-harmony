@@ -12,7 +12,7 @@ const validationSchema = Yup.object().shape({
 });
 const Login: React.FC = () => {
   const {
-    handleLogin
+    handleLogin, handleMockLogin
   } = useAuth();
   const formik = useFormik({
     initialValues: {
@@ -46,6 +46,9 @@ const Login: React.FC = () => {
 
             <Button type="submit" className="w-full" disabled={formik.isSubmitting}>
               {formik.isSubmitting ? "Entrando..." : "Entrar"}
+            </Button>
+            <Button type="button" variant="outline" className="w-full mt-2" onClick={handleMockLogin}>
+              Usar Login de Teste (admin@teste.com / 123456)
             </Button>
           </form>
         </CardContent>

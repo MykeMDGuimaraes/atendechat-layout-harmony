@@ -79,7 +79,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       toast.success("Login realizado com sucesso!");
       navigate("/");
     } catch (error: any) {
-      toast.error(error?.response?.data?.error || "Erro ao fazer login");
+      const msg = error?.response?.data?.error || "Erro ao fazer login";
+      toast.error(msg);
+      // Se o backend estiver indisponível, ativar fallback de teste
+      if (!error?.response) {
+        handleMockLogin();
+        return;
+      }
       throw error;
     } finally {
       setLoading(false);

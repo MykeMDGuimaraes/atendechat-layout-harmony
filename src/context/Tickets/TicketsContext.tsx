@@ -1,13 +1,30 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { useAuth } from "../Auth/AuthContext";
 
-interface Ticket {
+export interface Ticket {
   id: number;
   status: string;
+  lastMessage?: string;
+  updatedAt: string;
+  unreadMessages?: number;
   contactId: number;
   userId: number;
   queueId: number;
-  updatedAt: string;
+  contact: {
+    id: number;
+    name: string;
+    number: string;
+    profilePicUrl?: string;
+  };
+  user?: {
+    id: number;
+    name: string;
+  };
+  queue?: {
+    id: number;
+    name: string;
+    color: string;
+  };
 }
 
 interface TicketsContextData {
@@ -17,7 +34,7 @@ interface TicketsContextData {
   setCurrentTicket: React.Dispatch<React.SetStateAction<Ticket | null>>;
 }
 
-const TicketsContext = createContext<TicketsContextData>({} as TicketsContextData);
+export const TicketsContext = createContext<TicketsContextData>({} as TicketsContextData);
 
 export const TicketsContextProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [tickets, setTickets] = useState<Ticket[]>([]);

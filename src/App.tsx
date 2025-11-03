@@ -19,6 +19,7 @@ import LoggedInLayout from "./layout";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
+import TicketsCustom from "./pages/TicketsCustom";
 
 const queryClient = new QueryClient();
 
@@ -103,6 +104,8 @@ const App = () => {
                         }
                       >
                         <Route index element={<Dashboard />} />
+                        <Route path="/tickets" element={<TicketsCustom />} />
+                        <Route path="/tickets/:ticketId" element={<TicketsCustom />} />
                       </Route>
 
                       {/* 404 */}

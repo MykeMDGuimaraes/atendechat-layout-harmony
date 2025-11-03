@@ -80,6 +80,28 @@ const messages: any = {
           selectFilterError: "Selecione um filtro antes de continuar",
         },
       },
+      tickets: {
+        search: "Buscar tickets...",
+        noTickets: "Nenhum ticket encontrado",
+        tabs: {
+          open: "Abertos",
+          pending: "Aguardando",
+          closed: "Finalizados",
+        },
+        actions: {
+          accept: "Aceitar",
+          transfer: "Transferir",
+          resolve: "Resolver",
+        },
+      },
+      chat: {
+        noTicketMessage: "Selecione um ticket para começar",
+      },
+      ticketAdvanced: {
+        selectTicket: "Selecionar Ticket",
+        ticketNav: "Ticket",
+        attendanceNav: "Atendimentos",
+      },
     },
   },
   en: {
@@ -163,6 +185,28 @@ const messages: any = {
           selectFilterError: "Select a filter before continuing",
         },
       },
+      tickets: {
+        search: "Search tickets...",
+        noTickets: "No tickets found",
+        tabs: {
+          open: "Open",
+          pending: "Pending",
+          closed: "Closed",
+        },
+        actions: {
+          accept: "Accept",
+          transfer: "Transfer",
+          resolve: "Resolve",
+        },
+      },
+      chat: {
+        noTicketMessage: "Select a ticket to start",
+      },
+      ticketAdvanced: {
+        selectTicket: "Select Ticket",
+        ticketNav: "Ticket",
+        attendanceNav: "Attendance",
+      },
     },
   },
   es: {
@@ -245,6 +289,28 @@ const messages: any = {
         toasts: {
           selectFilterError: "Seleccione un filtro antes de continuar",
         },
+      },
+      tickets: {
+        search: "Buscar tickets...",
+        noTickets: "No se encontraron tickets",
+        tabs: {
+          open: "Abiertos",
+          pending: "En espera",
+          closed: "Finalizados",
+        },
+        actions: {
+          accept: "Aceptar",
+          transfer: "Transferir",
+          resolve: "Resolver",
+        },
+      },
+      chat: {
+        noTicketMessage: "Seleccione un ticket para comenzar",
+      },
+      ticketAdvanced: {
+        selectTicket: "Seleccionar Ticket",
+        ticketNav: "Ticket",
+        attendanceNav: "Atenciones",
       },
     },
   },

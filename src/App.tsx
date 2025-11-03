@@ -23,6 +23,11 @@ import TicketsCustom from "./pages/TicketsCustom";
 import TicketsAdvanced from "./pages/TicketsAdvanced";
 import Connections from "./pages/Connections";
 import Contacts from "./pages/Contacts";
+import Users from "./pages/Users";
+import Queues from "./pages/Queues";
+import Tags from "./pages/Tags";
+import QuickMessages from "./pages/QuickMessages";
+import Settings from "./pages/Settings";
 
 const queryClient = new QueryClient();
 
@@ -111,6 +116,11 @@ const App = () => {
                         <Route path="/tickets/:ticketId" element={<TicketsCustom />} />
                         <Route path="/connections" element={<Connections />} />
                         <Route path="/contacts" element={<Contacts />} />
+                        <Route path="/users" element={<Users />} />
+                        <Route path="/queues" element={<Queues />} />
+                        <Route path="/tags" element={<Tags />} />
+                        <Route path="/quickmessages" element={<QuickMessages />} />
+                        <Route path="/settings" element={<Settings />} />
                       </Route>
 
                       {/* 404 */}

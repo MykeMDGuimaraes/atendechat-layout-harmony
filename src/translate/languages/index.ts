@@ -247,6 +247,179 @@ const messages: any = {
           confirm: "Confirmar",
         },
       },
+      users: {
+        title: "Usuários",
+        table: {
+          id: "ID",
+          name: "Nome",
+          email: "Email",
+          profile: "Perfil",
+          actions: "Ações",
+        },
+        buttons: {
+          add: "Adicionar Usuário",
+        },
+        toasts: {
+          deleted: "Usuário deletado com sucesso.",
+        },
+        confirmationModal: {
+          deleteTitle: "Deletar",
+          deleteMessage: "Tem certeza que deseja deletar este usuário?",
+        },
+      },
+      userModal: {
+        title: {
+          add: "Adicionar Usuário",
+          edit: "Editar Usuário",
+        },
+        form: {
+          name: "Nome",
+          email: "Email",
+          password: "Senha",
+          profile: "Perfil",
+          profiles: {
+            user: "Usuário",
+            admin: "Admin",
+          },
+        },
+        buttons: {
+          cancel: "Cancelar",
+          save: "Salvar",
+        },
+        success: {
+          add: "Usuário adicionado com sucesso.",
+          edit: "Usuário editado com sucesso.",
+        },
+      },
+      queues: {
+        title: "Filas",
+        table: {
+          id: "ID",
+          name: "Nome",
+          color: "Cor",
+          orderQueue: "Ordem",
+          greeting: "Mensagem de Saudação",
+          actions: "Ações",
+        },
+        buttons: {
+          add: "Adicionar Fila",
+        },
+        toasts: {
+          deleted: "Fila deletada com sucesso.",
+        },
+        confirmationModal: {
+          deleteTitle: "Deletar",
+          deleteMessage: "Tem certeza que deseja deletar esta fila?",
+        },
+      },
+      queueModal: {
+        title: {
+          add: "Adicionar Fila",
+          edit: "Editar Fila",
+        },
+        form: {
+          name: "Nome",
+          color: "Cor",
+          greetingMessage: "Mensagem de Saudação",
+          orderQueue: "Ordem",
+        },
+        buttons: {
+          cancel: "Cancelar",
+          save: "Salvar",
+        },
+        success: {
+          add: "Fila adicionada com sucesso.",
+          edit: "Fila editada com sucesso.",
+        },
+      },
+      tags: {
+        title: "Tags",
+        table: {
+          name: "Nome",
+          tickets: "Tickets",
+          actions: "Ações",
+        },
+        buttons: {
+          add: "Adicionar Tag",
+        },
+        toasts: {
+          deleted: "Tag deletada com sucesso.",
+        },
+        confirmationModal: {
+          deleteTitle: "Deletar",
+          deleteMessage: "Tem certeza que deseja deletar esta tag?",
+        },
+      },
+      tagModal: {
+        title: {
+          add: "Adicionar Tag",
+          edit: "Editar Tag",
+        },
+        form: {
+          name: "Nome",
+          color: "Cor",
+        },
+        buttons: {
+          cancel: "Cancelar",
+          save: "Salvar",
+        },
+        success: {
+          add: "Tag adicionada com sucesso.",
+          edit: "Tag editada com sucesso.",
+        },
+      },
+      quickMessages: {
+        title: "Respostas Rápidas",
+        searchPlaceholder: "Buscar...",
+        table: {
+          shortcode: "Atalho",
+          mediaName: "Arquivo",
+          actions: "Ações",
+        },
+        buttons: {
+          add: "Adicionar",
+        },
+        toasts: {
+          deleted: "Resposta rápida deletada com sucesso.",
+        },
+        confirmationModal: {
+          deleteTitle: "Deletar",
+          deleteMessage: "Tem certeza que deseja deletar esta resposta rápida?",
+        },
+        noAttachment: "Sem anexo",
+      },
+      quickMessageDialog: {
+        title: {
+          add: "Adicionar Resposta Rápida",
+          edit: "Editar Resposta Rápida",
+        },
+        form: {
+          shortcode: "Atalho",
+          message: "Mensagem",
+        },
+        buttons: {
+          cancel: "Cancelar",
+          save: "Salvar",
+          attachFile: "Anexar Arquivo",
+        },
+        success: {
+          add: "Resposta rápida adicionada com sucesso.",
+          edit: "Resposta rápida editada com sucesso.",
+        },
+      },
+      settings: {
+        success: "Configurações salvas com sucesso.",
+        title: "Configurações",
+        settings: {
+          userCreation: {
+            name: "Criação de usuário",
+            options: {
+              enabled: "Habilitado",
+              disabled: "Desabilitado",
+            },
+          },
+        },
+      },
     },
   },
   en: {

@@ -34,10 +34,9 @@ import { SocketContext } from "../context/Socket/SocketContext";
 import TableChartIcon from "@material-ui/icons/TableChart";
 import BorderColorIcon from "@material-ui/icons/BorderColor";
 import { makeStyles } from "@material-ui/core/styles";
-import { AccountTree, AllInclusive, AttachFile, DeviceHubOutlined } from "@material-ui/icons";
+import { AccountTree, AllInclusive, AttachFile, DeviceHubOutlined, Timeline } from "@material-ui/icons";
 import usePlans from "../hooks/usePlans";
 import Typography from "@material-ui/core/Typography";
-import { ShapeLine } from "@mui/icons-material";
 
 const useStyles = makeStyles((theme) => ({
   ListSubheader: {
@@ -296,7 +295,7 @@ const MainListItems: React.FC<MainListItemsProps> = ({ drawerClose, collapsed })
 
                     <ListItem onClick={() => navigate("/flowbuilders")} button>
                       <ListItemIcon>
-                        <ShapeLine />
+                        <Timeline />
                       </ListItemIcon>
                       <ListItemText primary="Conversa" />
                     </ListItem>

@@ -28,7 +28,7 @@ const Login: React.FC = () => {
   });
   return <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-600 to-blue-800 relative overflow-hidden">
       <div 
-        className="absolute inset-0 bg-cover bg-center opacity-20"
+        className="absolute inset-0 bg-cover bg-center opacity-20 scale-[1.3]"
         style={{ backgroundImage: `url(${brainBg})` }}
       />
       <Card className="w-full max-w-md mx-4 relative z-10 bg-background/95 backdrop-blur-sm">

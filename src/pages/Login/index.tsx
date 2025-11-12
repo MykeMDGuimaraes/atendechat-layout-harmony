@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useAuth } from "../../context/Auth/AuthContext";
 import logoNetwork from "@/assets/logo-network.png";
+import brainBg from "@/assets/brain-bg.png";
 const validationSchema = Yup.object().shape({
   email: Yup.string().email("Email inválido").required("Email obrigatório"),
   password: Yup.string().min(6, "Senha deve ter no mínimo 6 caracteres").required("Senha obrigatória")
@@ -25,8 +26,12 @@ const Login: React.FC = () => {
       await handleLogin(values);
     }
   });
-  return <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-600 to-blue-800">
-      <Card className="w-full max-w-md mx-4">
+  return <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-600 to-blue-800 relative overflow-hidden">
+      <div 
+        className="absolute inset-0 bg-cover bg-center opacity-20"
+        style={{ backgroundImage: `url(${brainBg})` }}
+      />
+      <Card className="w-full max-w-md mx-4 relative z-10 bg-background/95 backdrop-blur-sm">
         <CardHeader className="text-center">
           <div className="flex justify-center mb-4">
             <img src={logoNetwork} alt="DIA Agent's House Logo" className="w-32 h-32 object-contain" />
